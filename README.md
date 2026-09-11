@@ -1,8 +1,10 @@
 # Vapor.nvim
 
+
 <div align="center">
 <img src="Public/vapor.dash.demo.jpg " width="420"   alt="Makima_Mommy">
 </div>
+
 
 Vapor lets you jump between files and directories instanenousy through oil. 
 Vapor is a fixed-slot navigation for Neovim: pin a file or directory once, then
@@ -82,6 +84,12 @@ require("vapor").setup({
     legacy_commands = true,
 })
 ```
+
+<div align="center">
+<img src="Public/vapor.dash.deeo2.jpg " width="420"   alt="dash">
+</div>
+
+
 
 To show Vapor in a Snacks dashboard section:
 
