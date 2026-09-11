@@ -86,7 +86,7 @@ require("vapor").setup({
 ```
 
 <div align="center">
-<img src="Public/vapor.dash.deeo2.jpg " width="420"   alt="dash">
+<img src="Public/vapor.dash.demo2.jpg " width="420"   alt="dash">
 </div>
 
 
