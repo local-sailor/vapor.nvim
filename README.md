@@ -20,7 +20,7 @@ differences:
 ## Features
 
 - Nine persistent file or directory slots by default.
-- Direct Option-number navigation in Warp and Meta-aware terminals.
+- Alt/Option-number navigation with configurable terminal fallbacks.
 - Oil integration for directory favorites, with a built-in fallback.
 - Telescope file search rooted at any favorite.
 - Snacks dashboard items with file and directory icons.

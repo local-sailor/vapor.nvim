@@ -393,8 +393,8 @@ local function create_keymaps()
         end
         local opts = { desc = "Vapor slot " .. slot }
 
-        -- Warp emits composed Option-number characters, while WezTerm can
-        -- emit Meta-number. Supporting both keeps one physical shortcut.
+        -- Terminals may encode Alt/Option-number as either Meta-number or a
+        -- composed character. Map both forms for portable shortcuts.
         vim.keymap.set("n", "<M-" .. slot .. ">", open, opts)
         if config.alt_chars[slot] then
             vim.keymap.set("n", config.alt_chars[slot], open, opts)
