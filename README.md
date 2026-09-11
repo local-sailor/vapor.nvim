@@ -28,19 +28,28 @@ differences:
 
 ## Installation
 
-With lazy.nvim:
+### LazyVim
+
+Create `~/.config/nvim/lua/plugins/vapor.lua` with the following contents:
 
 ```lua
-{
-    "local-sailor/vapor.nvim",
-    lazy = false,
-    dependencies = {
-        "stevearc/oil.nvim",
-        "nvim-telescope/telescope.nvim",
+return {
+    {
+        "local-sailor/vapor.nvim",
+        lazy = false,
+        dependencies = {
+            "stevearc/oil.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        opts = {},
     },
-    opts = {},
 }
 ```
+
+Restart Neovim or run `:Lazy sync` to install Vapor and its integrations.
+
+For another lazy.nvim configuration, add the inner plugin specification to the
+table passed to `require("lazy").setup()`.
 
 Oil and Telescope are optional. Vapor falls back to Neovim's directory buffer
 when Oil is unavailable, and only `:VaporFind` requires Telescope.
@@ -50,15 +59,17 @@ when Oil is unavailable, and only `:VaporFind` requires Telescope.
 To test a local checkout instead of the GitHub release:
 
 ```lua
-{
-    dir = "/absolute/path/to/vapor.nvim",
-    name = "vapor.nvim",
-    lazy = false,
-    dependencies = {
-        "stevearc/oil.nvim",
-        "nvim-telescope/telescope.nvim",
+return {
+    {
+        dir = "/absolute/path/to/vapor.nvim",
+        name = "vapor.nvim",
+        lazy = false,
+        dependencies = {
+            "stevearc/oil.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        opts = {},
     },
-    opts = {},
 }
 ```
 
