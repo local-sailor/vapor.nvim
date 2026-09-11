@@ -1,6 +1,6 @@
 # Vapor.nvim
 
-<div align="centre">
+<div align="center">
 <img src="Public/vapor.dash.demo.jpg " width="420"   alt="Makima_Mommy">
 </div>
 
