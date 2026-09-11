@@ -1,0 +1,56 @@
+*vapor.txt*                 Fixed-slot navigation for Neovim
+
+==============================================================================
+CONTENTS                                                        *vapor-contents*
+
+1. Introduction ................................................. |vapor|
+2. Commands ............................................. |vapor-commands|
+3. Configuration ....................................... |vapor-configuration|
+4. Dashboard ............................................... |vapor-dashboard|
+
+==============================================================================
+1. Introduction                                                     *vapor*
+
+Vapor pins files and directories into stable numbered slots. Slots open with
+Option+1 through Option+9 by default and persist between Neovim sessions.
+
+Directory favorites open in Oil when it is installed. File favorites set the
+window-local directory to their Git root so Telescope and other project tools
+start in the expected place.
+
+==============================================================================
+2. Commands                                                  *vapor-commands*
+
+:VaporAdd [slot]       Pin the current file. Uses the first free slot when the
+                       slot is omitted.
+:VaporAdd! [slot]      Pin the current working directory.
+:VaporDelete <slot>    Clear a slot.
+:VaporList             Display every slot.
+:VaporFind [slot]      Open Telescope at a slot's directory or Git root. With
+                       no slot, use the current working directory.
+
+:Fav, :FavDel, and :FavList are compatibility aliases unless disabled.
+
+==============================================================================
+3. Configuration                                        *vapor-configuration*
+
+>lua
+    require("vapor").setup({
+        slots = 9,
+        storage_path = vim.fn.stdpath("config") .. "/favorites.json",
+        map_slots = true,
+        legacy_commands = true,
+    })
+<
+
+`slots` controls the number of stable slots. The supplied `alt_chars` table
+may be overridden for a keyboard layout other than US/Australian.
+
+==============================================================================
+4. Dashboard                                                *vapor-dashboard*
+
+Use `require("vapor").dashboard_items` as a function section in a Snacks
+dashboard. It returns only occupied slots and gives each one an Option-number
+label without consuming the dashboard's plain numeric shortcuts.
+
+vim:tw=78:ts=8:noet:ft=help:norl:
