@@ -2,11 +2,11 @@
 
 
 <div align="center">
-<img src="Public/vapor.dash.demo.jpg " width="420"   alt="Makima_Mommy">
+<img src="Public/vapor.dash.demo.jpg" width="420" alt="Vapor dashboard">
 </div>
 
 
-Vapor lets you jump between files and directories instanenousy through oil. 
+Vapor lets you jump between files and directories instantaneously through Oil.
 Vapor is a fixed-slot navigation for Neovim: pin a file or directory once, then
 jump back to it instantly with `Option+1` through `Option+9`. 
 
@@ -28,26 +28,12 @@ differences:
 
 ## Installation
 
-With lazy.nvim from a local checkout:
-
-```lua
-{
-    dir = "/absolute/path/to/Vapor",
-    name = "vapor.nvim",
-    lazy = false,
-    dependencies = {
-        "stevearc/oil.nvim",
-        "nvim-telescope/telescope.nvim",
-    },
-    opts = {},
-}
-```
-
-From a Git repository after Vapor is published:
+With lazy.nvim:
 
 ```lua
 {
     "local-sailor/vapor.nvim",
+    lazy = false,
     dependencies = {
         "stevearc/oil.nvim",
         "nvim-telescope/telescope.nvim",
@@ -58,6 +44,23 @@ From a Git repository after Vapor is published:
 
 Oil and Telescope are optional. Vapor falls back to Neovim's directory buffer
 when Oil is unavailable, and only `:VaporFind` requires Telescope.
+
+### Local development
+
+To test a local checkout instead of the GitHub release:
+
+```lua
+{
+    dir = "/absolute/path/to/vapor.nvim",
+    name = "vapor.nvim",
+    lazy = false,
+    dependencies = {
+        "stevearc/oil.nvim",
+        "nvim-telescope/telescope.nvim",
+    },
+    opts = {},
+}
+```
 
 ## Commands
 
@@ -86,7 +89,7 @@ require("vapor").setup({
 ```
 
 <div align="center">
-<img src="Public/vapor.dash.demo2.jpg " width="420"   alt="dash">
+<img src="Public/vapor.dash.demo2.jpg" width="420" alt="Vapor dashboard favourites">
 </div>
 
 
