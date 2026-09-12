@@ -52,7 +52,7 @@ For another lazy.nvim configuration, add the inner plugin specification to the
 table passed to `require("lazy").setup()`.
 
 Oil and Telescope are optional. Vapor falls back to Neovim's directory buffer
-when Oil is unavailable, and only `:VaporFind` requires Telescope.
+when Oil is unavailable, and only `:VprF` requires Telescope.
 
 ### Local development
 
@@ -75,18 +75,18 @@ return {
 
 ## Commands
 
-| Command | Action |
-| --- | --- |
-| `:VaporAdd` | Pin the current file in the first free slot. |
-| `:VaporAdd 3` | Pin the current file in slot 3. |
-| `:VaporAdd! 3` | Pin the current working directory in slot 3. |
-| `:VaporDelete 3` | Clear slot 3. |
-| `:VaporList` | Display all slots. |
-| `:VaporFind 3` | Open Telescope at slot 3's directory or Git root. |
-| `:VaporFind` | Open Telescope at the current working directory. |
+| Command | Legacy aliases | Action |
+| --- | --- | --- |
+| `:VprFav` | `:Fav` | Pin the current file in the first free slot. |
+| `:VprFav 3` | `:Fav 3` | Pin the current file in slot 3. |
+| `:VprFav! 3` | `:Fav! 3` | Pin the current working directory in slot 3. |
+| `:VprDel 3` | `:FavDel 3` | Clear slot 3. |
+| `:VprLS` | `:FavList` | Display all slots. |
+| `:VprF 3` | — | Open Telescope at slot 3's directory or Git root. |
+| `:VprF` | — | Open Telescope at the current working directory. |
 
-The old `:Fav`, `:FavDel`, and `:FavList` commands remain available by default
-for compatibility.
+Legacy aliases are enabled by default and can be disabled with
+`legacy_commands = false`.
 
 ## Configuration
 
@@ -109,8 +109,8 @@ To show Vapor in a Snacks dashboard section:
 
 ```lua
 {
-    icon = "󰓎 ",
-    title = "Vapor",
+    icon = " ",
+    title = "Vapor Launchpad",
     indent = 2,
     padding = 1,
     require("vapor").dashboard_items,

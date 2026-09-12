@@ -217,7 +217,7 @@ function M.add(slot, force_dir)
         notify(
             "all "
                 .. config.slots
-                .. " slots are taken; use :VaporAdd <slot> to overwrite",
+                .. " slots are taken; use :VprFav <slot> to overwrite",
             vim.log.levels.ERROR
         )
         return
@@ -308,7 +308,7 @@ function M.dashboard_items()
     if #items == 0 then
         items[1] = {
             icon = " ",
-            desc = "none yet — :VaporAdd pins the current file or folder",
+            desc = "none yet — :VprFav pins the current file or folder",
         }
     end
 
@@ -342,22 +342,22 @@ local function create_commands()
         end
     end
 
-    vim.api.nvim_create_user_command("VaporAdd", add_command, {
+    vim.api.nvim_create_user_command("VprFav", add_command, {
         nargs = "?",
         bang = true,
         force = true,
         desc = "Pin the current file (! or no file: cwd) in Vapor",
     })
-    vim.api.nvim_create_user_command("VaporDelete", delete_command, {
+    vim.api.nvim_create_user_command("VprDel", delete_command, {
         nargs = 1,
         force = true,
         desc = "Clear a Vapor slot",
     })
-    vim.api.nvim_create_user_command("VaporList", list_command, {
+    vim.api.nvim_create_user_command("VprLS", list_command, {
         force = true,
         desc = "List Vapor slots",
     })
-    vim.api.nvim_create_user_command("VaporFind", find_command, {
+    vim.api.nvim_create_user_command("VprF", find_command, {
         nargs = "?",
         force = true,
         desc = "Find files with Telescope from a Vapor slot",
@@ -368,16 +368,16 @@ local function create_commands()
             nargs = "?",
             bang = true,
             force = true,
-            desc = "Alias for :VaporAdd",
+            desc = "Alias for :VprFav",
         })
         vim.api.nvim_create_user_command("FavDel", delete_command, {
             nargs = 1,
             force = true,
-            desc = "Alias for :VaporDelete",
+            desc = "Alias for :VprDel",
         })
         vim.api.nvim_create_user_command("FavList", list_command, {
             force = true,
-            desc = "Alias for :VaporList",
+            desc = "Alias for :VprLS",
         })
     end
 end

@@ -21,12 +21,12 @@ start in the expected place.
 ==============================================================================
 2. Commands                                                  *vapor-commands*
 
-:VaporAdd [slot]       Pin the current file. Uses the first free slot when the
+:VprFav [slot]         Pin the current file. Uses the first free slot when the
                        slot is omitted.
-:VaporAdd! [slot]      Pin the current working directory.
-:VaporDelete <slot>    Clear a slot.
-:VaporList             Display every slot.
-:VaporFind [slot]      Open Telescope at a slot's directory or Git root. With
+:VprFav! [slot]        Pin the current working directory.
+:VprDel <slot>         Clear a slot.
+:VprLS                 Display every slot.
+:VprF [slot]           Open Telescope at a slot's directory or Git root. With
                        no slot, use the current working directory.
 
 :Fav, :FavDel, and :FavList are compatibility aliases unless disabled.
