@@ -77,9 +77,9 @@ return {
 
 | Command | Legacy aliases | Action |
 | --- | --- | --- |
-| `:VprFav` | `:Fav` | Pin the current file in the first free slot. |
-| `:VprFav 3` | `:Fav 3` | Pin the current file in slot 3. |
-| `:VprFav! 3` | `:Fav! 3` | Pin the current working directory in slot 3. |
+| `:Vapr` | `:Fav` | Pin the current file in the first free slot. |
+| `:Vapr 3` | `:Fav 3` | Pin the current file in slot 3. |
+| `:Vapr! 3` | `:Fav! 3` | Pin the current working directory in slot 3. |
 | `:VprDel 3` | `:FavDel 3` | Clear slot 3. |
 | `:VprLS` | `:FavList` | Display all slots. |
 | `:VprF 3` | — | Open Telescope at slot 3's directory or Git root. |
@@ -87,6 +87,8 @@ return {
 
 Legacy aliases are enabled by default and can be disabled with
 `legacy_commands = false`.
+
+Run `:help vapor` after installation for the compact reference.
 
 ## Configuration
 
@@ -127,5 +129,3 @@ Vapor stores an object keyed by slot number so empty slots never collapse:
   "3": { "path": "/path/to/project/README.md", "kind": "file" }
 }
 ```
-
-Run `:help vapor` after installation for the compact reference.

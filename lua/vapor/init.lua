@@ -217,7 +217,7 @@ function M.add(slot, force_dir)
         notify(
             "all "
                 .. config.slots
-                .. " slots are taken; use :VprFav <slot> to overwrite",
+                .. " slots are taken; use :Vapr <slot> to overwrite",
             vim.log.levels.ERROR
         )
         return
@@ -308,7 +308,7 @@ function M.dashboard_items()
     if #items == 0 then
         items[1] = {
             icon = " ",
-            desc = "none yet — :VprFav pins the current file or folder",
+            desc = "none yet — :Vapr pins the current file or folder",
         }
     end
 
@@ -342,7 +342,7 @@ local function create_commands()
         end
     end
 
-    vim.api.nvim_create_user_command("VprFav", add_command, {
+    vim.api.nvim_create_user_command("Vapr", add_command, {
         nargs = "?",
         bang = true,
         force = true,
@@ -368,7 +368,7 @@ local function create_commands()
             nargs = "?",
             bang = true,
             force = true,
-            desc = "Alias for :VprFav",
+            desc = "Alias for :Vapr",
         })
         vim.api.nvim_create_user_command("FavDel", delete_command, {
             nargs = 1,
