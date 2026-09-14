@@ -77,9 +77,9 @@ return {
 
 | Command | Legacy aliases | Action |
 | --- | --- | --- |
-| `:Vapr` | `:Fav` | Pin the current file in the first free slot. |
-| `:Vapr 3` | `:Fav 3` | Pin the current file in slot 3. |
-| `:Vapr! 3` | `:Fav! 3` | Pin the current working directory in slot 3. |
+| `:Vpr` | `:Fav` | Pin the current file in the first free slot. |
+| `:Vpr 3` | `:Fav 3` | Pin the current file in slot 3. |
+| `:Vpr! 3` | `:Fav! 3` | Pin the current working directory in slot 3. |
 | `:VprDel 3` | `:FavDel 3` | Clear slot 3. |
 | `:VprLS` | `:FavList` | Display all slots. |
 | `:VprF 3` | — | Open Telescope at slot 3's directory or Git root. |

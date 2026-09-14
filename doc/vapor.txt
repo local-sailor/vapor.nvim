@@ -21,9 +21,9 @@ start in the expected place.
 ==============================================================================
 2. Commands                                                  *vapor-commands*
 
-:Vapr [slot]           Pin the current file. Uses the first free slot when the
+:Vpr [slot]            Pin the current file. Uses the first free slot when the
                        slot is omitted.
-:Vapr! [slot]          Pin the current working directory.
+:Vpr! [slot]           Pin the current working directory.
 :VprDel <slot>         Clear a slot.
 :VprLS                 Display every slot.
 :VprF [slot]           Open Telescope at a slot's directory or Git root. With
